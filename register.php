@@ -1,14 +1,14 @@
 <?php
+    require("db.phpo");
     if (isset ($_POST['submit'])){
-        $first_name = $_POST['first_name'];
+        $first_name = sanitize_post('first_name');
         $last_name = $_POST['last_name'];
         $username = $_POST['username'];
         $pass1 = $_POST['pass1'];
         $pass2 = $_POST['pass2'];
 
         $ok = 1;
-        $sql = "SELECT * FROM login_data WHERE username = '$username';";
-        $query = mysqli_query ($conn, $sql);
+        $query = search('login_data', 'username', $username);
         $row = mysqli_fetch_array ($query);
         if ($row['username'] == $username){
             echo "This username is already taken<br><br>";

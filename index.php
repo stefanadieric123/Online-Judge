@@ -3,7 +3,7 @@
 	require ("connection.php");
 
 	if (isset ($_GET['page'])){
-        $pages = array ("home", "arhiva", "login", "logout",  "register");
+        $pages = array ("home", "arhiva", "login", "logout", "forum", "register");
 		
 		if (in_array ($_GET['page'], $pages)){
 			$_page = $_GET['page'];
@@ -32,7 +32,8 @@
 <div id = "toplist">
 		<ul id = "mylist">
 			<li><a href = "index.php?page=home"> Home </a> </li>
-			<li><a href = "index.php?page=arhiva"> Arhiva </a> </li>
+            <li><a href = "index.php?page=arhiva"> Arhiva </a> </li>
+            <li><a href = "index.php?page=forum"> Forum </a> </li>
 		</ul> 
 </div>
 
